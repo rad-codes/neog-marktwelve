@@ -6,4 +6,4 @@
 #### Ready to test?
 ![Alt text](/neog-marktwelve/images/app1.png?raw=true  " App")
 ![Alt text](/neog-marktwelve/images/app2.png?raw=true "App Test")
-![Alt text](/neog-marktwelve/images/app3.pngraw=true " App Test")
+![Alt text](/neog-marktwelve/images/app3.png?raw=true " App Test")
