@@ -12,7 +12,7 @@ function checktriangle() {
         Number(inputside[0].value),
         Number(inputside[1].value)
       );
-      message.innerText = Math.sqrt(sum);
+      message.innerText = Math.sqrt(sum).toFixed(4);
     }
     else{
         message.innerText = "Enter value greater than 0 in all fields";

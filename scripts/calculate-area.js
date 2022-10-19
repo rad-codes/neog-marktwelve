@@ -11,20 +11,29 @@ function handleclick(e) {
       Number(side2.value) > 0 &&
       Number(side3.value) > 0
     ) {
-      const semiperi = calculatesemiperimeter(
-        Number(side1.value),
-        Number(side2.value),
-        Number(side3.value)
-      );
-      console.log("semiperi", semiperi);
-      const area = calculatearea(
-        semiperi,
-        Number(side1.value),
-        Number(side2.value),
-        Number(side3.value)
-      );
-      console.log("area", area);
-      output.innerText = "area is " + area;
+      if (
+        Number(side1.value) + Number(side2.value) > Number(side3.value) &&
+        Number(side2.value) + Number(side3.value) > Number(side1.value) &&
+        Number(side1.value) + Number(side3.value) > Number(side2.value)
+      ) {
+        const semiperi = calculatesemiperimeter(
+          Number(side1.value),
+          Number(side2.value),
+          Number(side3.value)
+        );
+        console.log("semiperi", semiperi);
+        const area = calculatearea(
+          semiperi,
+          Number(side1.value),
+          Number(side2.value),
+          Number(side3.value)
+        );
+        console.log("area", area);
+        output.innerText = "area is " + area;
+      } else {
+        output.innerText =
+          "Length Of any side cannot be greater then sum of rest 2 sides";
+      }
     } else {
       output.innerText = "Enter values greater than 0 in all fields";
     }
@@ -42,8 +51,9 @@ function calculatearea(semiperimeter, sidea, sideb, sidec) {
       (semiperimeter - sidea) *
       (semiperimeter - sideb) *
       (semiperimeter - sidec)
-  );
+  ).toFixed(4);
   console.log("out", out);
+  //  out=Number(out).toFixed(2);
   return out;
   // return Math.sqrt(
   //     semiperimeter *(semiperimeter - sidea) * (semiperimeter - sideb) *(semiperimeter - sidec))
